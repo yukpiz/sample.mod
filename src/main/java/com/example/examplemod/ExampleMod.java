@@ -5,6 +5,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 
+
 @Mod(modid = ExampleMod.MODID, version = ExampleMod.VERSION)
 public class ExampleMod
 {
@@ -16,5 +17,11 @@ public class ExampleMod
     {
 		// some example code
         System.out.println("DIRT BLOCK >> "+Blocks.dirt.getUnlocalizedName());
+    }
+
+    @SubscribeEvent
+    public void onPlayerDropsEvent(PlayerDropsEvent event)
+    {
+        event.setCanceled(true);
     }
 }
